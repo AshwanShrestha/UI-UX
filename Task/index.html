@@ -19,7 +19,500 @@
             color: #ffffff;
             line-height: 1.6;
         }
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainwave AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
 
+        body {
+            background-color: #0a0a0f;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 4rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #4a4af4;
+            color: white;
+        }
+
+        .btn-outline {
+            border: 1px solid #333;
+            color: white;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background: radial-gradient(circle at center, #1a1a2e, #0a0a0f);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, #888);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: #888;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+        
+
+        .pricing {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .pricing-card li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            color: #888;
+        }
+
+        .pricing-card li::before {
+            content: "•";
+            color: #4a4af4;
+        }
+
+        .working-on {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .working-on h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-item img {
+            width: 100%;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-item p {
+            color: #888;
+            line-height: 1.6;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 1rem;
+        }
+        .footer {
+            background: rgba(10, 10, 15, 0.95);
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 4rem;
+        }
+
+        .copyright {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .social-links a {
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-links a:hover {
+            opacity: 1;
+        }
+
+        .social-links img {
+            width: 20px;
+            height: 20px;
+        }
+        .highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    padding: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.highlights::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.1), transparent 60%);
+    pointer-events: none;
+}
+
+.highlight-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.highlight-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.highlight-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.highlight-icon svg {
+    width: 28px;
+    height: 28px;
+    stroke: currentColor;
+}
+
+.highlight-icon.purple {
+    background: #8b5cf6;
+    color: #fff;
+}
+
+.highlight-icon.orange {
+    background: #f59e0b;
+    color: #fff;
+}
+
+.highlight-icon.green {
+    background: #10b981;
+    color: #fff;
+}
+
+.highlight-icon.coral {
+    background: #ff6b6b;
+    color: #fff;
+}
+
+.highlight-card h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0.7));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.highlight-card p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 2rem;
+    font-size: 1.125rem;
+    line-height: 1.7;
+}
+
+.explore-link {
+    display: inline-flex;
+    align-items: center;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+}
+
+.explore-link::after {
+    content: '→';
+    margin-left: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.explore-link:hover::after {
+    transform: translateX(4px);
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" class="logo">
+            <img src="https://api.iconify.design/carbon:ai-status.svg?color=white" width="32" height="32" alt="AI Icon">
+            Brainwave
+        </a>
+        <div class="nav-links">
+            <a href="#">FEATURES</a>
+            <a href="#">PRICING</a>
+            <a href="#">HOW TO USE</a>
+            <a href="#">ROADMAP</a>
+        </div>
+        <div class="auth-buttons">
+            <a href="#" class="btn btn-outline">NEW ACCOUNT</a>
+            <a href="#" class="btn btn-primary">SIGN IN</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Explore the Possibilities<br>of AI Chatting with Brainwave</h1>
+        <p>Unleash the power of AI within Brainwave. Upgrade your productivity with Brainwave, the open AI chat app.</p>
+        <a href="#" class="btn btn-primary">GET STARTED</a>
+    </section>
+    <section class="highlights">
+        <div class="highlight-card">
+            <div class="highlight-icon purple">
+            </div>
+            <h2>Ask anything</h2>
+            <p>Lets users quickly find answers to their questions without having to search through multiple sources.</p>
+            <a href="#" class="explore-link">EXPLORE MORE</a>
+        </div>
+
+        <div class="highlight-card">
+            <div class="highlight-icon orange">
+            </div>
+            <h2>Improve everyday</h2>
+            <p>The app uses natural language processing to understand user queries and provide accurate and relevant responses.</p>
+            <a href="#" class="explore-link">EXPLORE MORE</a>
+        </div>
+
+        <div class="highlight-card">
+            <div class="highlight-icon green">
+            </div>
+            <h2>Connect everywhere</h2>
+            <p>Connect with the AI chatbot from anywhere, on any device, making it more accessible and convenient.</p>
+            <a href="#" class="explore-link">EXPLORE MORE</a>
+        </div>
+    </section>
+    <section class="highlights highlights-alt">
+        <div class="highlight-card">
+            <div class="highlight-icon coral">
+            </div>
+            <h2>Fast responding</h2>
+            <p>Lets users quickly find answers to their questions without having to search through multiple sources.</p>
+            <a href="#" class="explore-link">EXPLORE MORE</a>
+        </div>
+
+        <div class="highlight-card">
+            <div class="highlight-icon purple">
+            </div>
+            <h2>Ask anything</h2>
+            <p>Lets users quickly find answers to their questions without having to search through multiple sources.</p>
+            <a href="#" class="explore-link">EXPLORE MORE</a>
+        </div>
+
+        <div class="highlight-card">
+            <div class="highlight-icon orange">
+            </div>
+            <h2>Improve everyday</h2>
+            <p>The app uses natural language processing to understand user queries and provide accurate and relevant responses.</p>
+            <a href="#" class="explore-link">EXPLORE MORE</a>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Basic</h3>
+                <div class="price">$0</div>
+                <a href="#" class="btn btn-outline">GET STARTED</a>
+                <ul>
+                    <li>An AI chatbot that can understand your queries</li>
+                    <li>Personalized recommendations based on your preferences</li>
+                    <li>Ability to explore the app and its features without any cost</li>
+                </ul>
+            </div>
+            <div class="pricing-card">
+                <h3>Premium</h3>
+                <div class="price">$9.99</div>
+                <a href="#" class="btn btn-primary">GET STARTED</a>
+                <ul>
+                    <li>An advanced AI chatbot that can understand complex queries</li>
+                    <li>An analytics dashboard to track your conversations</li>
+                    <li>Priority support to solve issues quickly</li>
+                </ul>
+            </div>
+            <div class="pricing-card">
+                <h3>Enterprise</h3>
+                <div class="price">Custom</div>
+                <a href="#" class="btn btn-outline">CONTACT US</a>
+                <ul>
+                    <li>Custom AI models, dedicated solutions, dedicated account</li>
+                    <li>Personalized recommendations based on your preferences</li>
+                    <li>Ability to explore the app and its features without any cost</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="working-on">
+        <h2>What we're working on</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <span class="tag">MAY 2023</span>
+                <h3>Voice recognition</h3>
+                <p>Enable the chatbot to understand and respond to voice commands, making it easier for users to interact with the bot hands-free.</p>
+                <img src="https://images.unsplash.com/photo-1589254065878-42c9da997008?w=500" alt="Voice Recognition">
+            </div>
+            <div class="feature-item">
+                <span class="tag">MAY 2023</span>
+                <h3>Gamification</h3>
+                <p>Add game-like elements, such as badges or leaderboards, to incentivize users to engage with the chatbot more frequently.</p>
+                <img src="https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=500" alt="Gamification">
+            </div>
+            <div class="feature-item">
+                <span class="tag">MAY 2023</span>
+                <h3>Chatbot customization</h3>
+                <p>Allow users to customize the chatbot's appearance and behavior, making it more engaging and fun to interact with.</p>
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500" alt="Chatbot Customization">
+            </div>
+            <div class="feature-item">
+                <span class="tag">MAY 2023</span>
+                <h3>Integration with APIs</h3>
+                <p>Allow the chatbot to access external data sources, such as weather APIs or knowledge bases, to provide more relevant responses.</p>
+                <img src="https://images.unsplash.com/photo-1676299081847-824916de030a?w=500" alt="API Integration">
+            </div>
+        </div>
+    </section>
+</body>
+<footer class="footer">
+    <div class="copyright">© 2025. All rights reserved.</div>
+    <div class="social-links">
+        <a href="#"><img src="https://api.iconify.design/mdi:discord.svg?color=white" alt="Discord"></a>
+        <a href="#"><img src="https://api.iconify.design/mdi:twitter.svg?color=white" alt="Twitter"></a>
+        <a href="#"><img src="https://api.iconify.design/mdi:instagram.svg?color=white" alt="Instagram"></a>
+        <a href="#"><img src="https://api.iconify.design/mdi:telegram.svg?color=white" alt="Telegram"></a>
+        <a href="#"><img src="https://api.iconify.design/mdi:facebook.svg?color=white" alt="Facebook"></a>
+    </div>
+</footer>
+</html>
         /* Navigation */
         nav {
             position: fixed;
