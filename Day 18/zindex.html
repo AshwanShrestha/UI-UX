@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            display: flex;
+            border: 2px solid rgb(247, 11, 11);
+            ;
+
+        }
+        .minibox{
+            background-color: blue;
+            height: 100px;
+            width: 100px;
+            font-size: 2rem;
+            align-content: center;
+            text-align: center;
+        }
+        /* opacity=0-1 */
+        #mini1{
+            left: 40px;
+            position: relative;
+            opacity: 0.5;
+          
+        }
+        #mini2{
+            background-color: aqua;
+            z-index: 1;
+            opacity: 1;
+        }
+          
+   
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="minibox" id="mini1">1</div>
+        <div class="minibox" id="mini2">2</div>
+        <div class="minibox" id="mini3">3</div>
+        <div class="minibox" id="mini4">4</div>
+        <div class="minibox" id="mini5">5</div>
+        <div class="minibox" id="mini6">6</div>
+    </div>
+</body>
+</html>

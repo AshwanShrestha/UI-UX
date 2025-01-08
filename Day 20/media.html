@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query Responsive</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .parent{
+            /* display: flex; */
+            display: grid;
+            justify-content: center;
+            grid-template-columns: repeat(6 100px);
+            gap: 1rem;
+            border: 4px;
+            /* background-color: red; */
+            border: 4px red solid;
+            height: 100vh;
+            /* width: 100px; */
+        }
+        .child{
+            display: flex;
+            height: 50px;
+            width: 50px;
+            border: 2px solid;
+           
+        }
+        /* @media screen and (min-width:768px) {
+           .parent{
+            background-color: blue;
+        }
+
+        } */
+      
+        @media screen and (max-width:300px) {
+           .parent{
+            background-color: blue;
+            grid-template-columns: repeat(3,50px);
+        }
+        @media screen and (max-width:200px) {
+           .parent{
+            background-color: blue;
+            grid-template-columns: repeat(2,50px);
+        }
+        @media screen and (max-width:100px) {
+           .parent{
+            background-color: blue;
+            grid-template-columns: repeat(1,50px);
+        }
+
+
+
+        }
+         /* @media screen and ( orientaion: portrait ) {
+            .parent{
+                background-color: blue;
+            }
+                .child{
+                    height:150px ;
+                    width: 150px;
+                    border: 2px solid;
+                    
+                }
+            }
+            
+            @media screen and (max-width: 600px) {
+                .parent{
+                    flex-wrap: wrap; 
+                      flex-direction: column; 
+
+
+                 
+                    
+                }
+                
+            } */
+            
+         
+        
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+        <div class="child">5</div>
+        <div class="child">6</div>
+    </div>
+</body>
+</html>
